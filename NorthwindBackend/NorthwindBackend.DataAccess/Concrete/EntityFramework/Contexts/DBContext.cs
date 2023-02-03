@@ -18,7 +18,7 @@ namespace NorthwindBackend.DataAccess.Concrete.EntityFramework.Contexts
             configurationManager.SetBasePath(Directory.GetCurrentDirectory());
             configurationManager.AddJsonFile("appsettings.json");
 
-            optionsBuilder.UseSqlServer(@"Server=LAPTOP-JRBE62DF;Database=Northwind;UID=sa;password=Ag054348");
+            optionsBuilder.UseSqlServer(configurationManager.GetConnectionString("SQLServer"));
         }
 
         public DbSet<Product> Products { get; set; }
