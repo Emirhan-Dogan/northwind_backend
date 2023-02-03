@@ -1,0 +1,17 @@
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\bin\Debug\net6.0\NorthwindBackend.DataAccess.deps.json
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\bin\Debug\net6.0\NorthwindBackend.DataAccess.dll
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\bin\Debug\net6.0\NorthwindBackend.DataAccess.pdb
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\bin\Debug\net6.0\Core.dll
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\bin\Debug\net6.0\NorthwindBackend.Entities.dll
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\bin\Debug\net6.0\Core.pdb
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\bin\Debug\net6.0\NorthwindBackend.Entities.pdb
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\obj\Debug\net6.0\NorthwindBackend.DataAccess.csproj.AssemblyReference.cache
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\obj\Debug\net6.0\NorthwindBackend.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\obj\Debug\net6.0\NorthwindBackend.DataAccess.AssemblyInfoInputs.cache
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\obj\Debug\net6.0\NorthwindBackend.DataAccess.AssemblyInfo.cs
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\obj\Debug\net6.0\NorthwindBackend.DataAccess.csproj.CoreCompileInputs.cache
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\obj\Debug\net6.0\NorthwindBackend.DataAccess.csproj.CopyComplete
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\obj\Debug\net6.0\NorthwindBackend.DataAccess.dll
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\obj\Debug\net6.0\refint\NorthwindBackend.DataAccess.dll
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\obj\Debug\net6.0\NorthwindBackend.DataAccess.pdb
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.DataAccess\obj\Debug\net6.0\ref\NorthwindBackend.DataAccess.dll

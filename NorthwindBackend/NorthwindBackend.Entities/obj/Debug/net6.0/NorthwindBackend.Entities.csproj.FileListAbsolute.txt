@@ -1,0 +1,15 @@
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\bin\Debug\net6.0\NorthwindBackend.Entities.deps.json
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\bin\Debug\net6.0\NorthwindBackend.Entities.dll
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\bin\Debug\net6.0\NorthwindBackend.Entities.pdb
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\bin\Debug\net6.0\Core.dll
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\bin\Debug\net6.0\Core.pdb
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\obj\Debug\net6.0\NorthwindBackend.Entities.csproj.AssemblyReference.cache
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\obj\Debug\net6.0\NorthwindBackend.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\obj\Debug\net6.0\NorthwindBackend.Entities.AssemblyInfoInputs.cache
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\obj\Debug\net6.0\NorthwindBackend.Entities.AssemblyInfo.cs
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\obj\Debug\net6.0\NorthwindBackend.Entities.csproj.CoreCompileInputs.cache
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\obj\Debug\net6.0\NorthwindBackend.Entities.csproj.CopyComplete
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\obj\Debug\net6.0\NorthwindBackend.Entities.dll
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\obj\Debug\net6.0\refint\NorthwindBackend.Entities.dll
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\obj\Debug\net6.0\NorthwindBackend.Entities.pdb
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.Entities\obj\Debug\net6.0\ref\NorthwindBackend.Entities.dll

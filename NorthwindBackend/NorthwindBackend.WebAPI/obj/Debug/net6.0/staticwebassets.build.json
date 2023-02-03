@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "K9xsclWlxwoeAz8NHKY+wh8aIi8UPqqDHuNtrq18jxM=",
+  "Source": "NorthwindBackend.WebAPI",
+  "BasePath": "_content/NorthwindBackend.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
