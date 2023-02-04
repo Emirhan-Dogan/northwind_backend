@@ -42,7 +42,7 @@ namespace NorthwindBackend.WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
-        [HttpGet("getbyıd")]
+        [HttpGet("getbyid")]
         public IActionResult GetById(int Id)
         {
             var result = _productService.GetById(Id);

@@ -13,46 +13,45 @@ namespace NorthwindBackend.Business.Concrete
 {
     public class ProductManager : IProductService
     {
-        private readonly IProductDal _productDal;
-
-
         public ProductManager(IProductDal productDal)
         {
             this._productDal = productDal;
         }
 
+        private readonly IProductDal _productDal;
 
-        public IResult Add(Product product)
+
+        public IResult Add(Product entity)
         {
-            _productDal.Add(product);
-            return new SuccessResult(Messages.ProductAdded);
+            _productDal.Add(entity);
+            return new SuccessResult(SuccessMessages.ProductAdded);
         }
 
-        public IResult Delete(Product product)
+        public IResult Delete(Product entity)
         {
-            _productDal.Delete(product);
-            return new SuccessResult(Messages.ProductDeleted);
+            _productDal.Delete(entity);
+            return new SuccessResult(SuccessMessages.ProductDeleted);
         }
 
-        public IDataResult<Product> GetById(int id)
+        public IDataResult<Product> GetById(object id)
         {
-            return new SuccessDataResult<Product>(Messages.ProductGet, _productDal.Get(O => O.ProductID == id));
+            return new SuccessDataResult<Product>(SuccessMessages.ProductGet, _productDal.Get(O => O.ProductID == Convert.ToInt32(id)));
         }
 
         public IDataResult<List<Product>> GetList()
         {
-            return new SuccessDataResult<List<Product>>(Messages.ProductList, _productDal.GetAll().ToList());
+            return new SuccessDataResult<List<Product>>(SuccessMessages.ProductList, _productDal.GetAll().ToList());
         }
 
         public IDataResult<List<Product>> GetListByCategory(int categoryId)
         {
-            return new SuccessDataResult<List<Product>>(Messages.ProductList, _productDal.GetAll(O => O.CategoryID == categoryId).ToList());
+            return new SuccessDataResult<List<Product>>(SuccessMessages.ProductList, _productDal.GetAll(O => O.CategoryID == categoryId).ToList());
         }
 
-        public IResult Update(Product product)
+        public IResult Update(Product entity)
         {
-            _productDal.Update(product);
-            return new SuccessResult(Messages.ProductUpdated);
+            _productDal.Update(entity);
+            return new SuccessResult(SuccessMessages.ProductUpdated);
         }
     }
 }

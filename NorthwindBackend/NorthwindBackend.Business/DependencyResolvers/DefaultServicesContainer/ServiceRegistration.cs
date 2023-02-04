@@ -10,14 +10,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NorthwindBackend.Business
+namespace NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer
 {
     public static class ServiceRegistration
     {
 
         public static void addBusinessServices(this IServiceCollection services)
         {
+            // Product
             services.AddSingleton<IProductService, ProductManager>();
+        }
+
+        public static void addDataAccessServices(this IServiceCollection services)
+        {
+            // Product
             services.AddSingleton<IProductDal, EfProductDal>();
         }
     }
