@@ -35,7 +35,7 @@ namespace NorthwindBackend.Business.Concrete
 
         public IDataResult<Territory> GetById(object id)
         {
-            return new SuccessDataResult<Territory>(SuccessMessages.TerritoryGet, _territoryDal.Get(O=>O.TerritoryID == id));
+            return new SuccessDataResult<Territory>(SuccessMessages.TerritoryGet, _territoryDal.Get(O=>O.TerritoryID == Convert.ToString(id)));
         }
 
         public IDataResult<List<Territory>> GetList()

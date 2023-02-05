@@ -33,9 +33,9 @@ namespace NorthwindBackend.Business.Concrete
             return new SuccessResult(SuccessMessages.CategoryDeleted);
         }
 
-        public IDataResult<Category> GetById(int id)
+        public IDataResult<Category> GetById(object id)
         {
-            return new SuccessDataResult<Category>(SuccessMessages.CategoryGet, _categoryDal.Get(O => O.CategoryID==id));
+            return new SuccessDataResult<Category>(SuccessMessages.CategoryGet, _categoryDal.Get(O => O.CategoryID == Convert.ToInt32(id)));
         }
 
         public IDataResult<List<Category>> GetList()

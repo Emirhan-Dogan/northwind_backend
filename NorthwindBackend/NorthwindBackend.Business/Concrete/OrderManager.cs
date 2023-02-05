@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Result;
 using NorthwindBackend.Business.Abstract;
+using NorthwindBackend.Business.Constants;
 using NorthwindBackend.DataAccess.Abstract;
 using NorthwindBackend.Entities.Concrete;
 using System;
@@ -22,27 +23,30 @@ namespace NorthwindBackend.Business.Concrete
 
         public IResult Add(Order entity)
         {
-            throw new NotImplementedException();
+            _orderDal.Add(entity);
+            return new SuccessResult(SuccessMessages.OrderAdded);
         }
 
         public IResult Delete(Order entity)
         {
-            throw new NotImplementedException();
+            _orderDal.Delete(entity);
+            return new SuccessResult(SuccessMessages.OrderDeleted);
         }
 
         public IDataResult<Order> GetById(object id)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Order>(SuccessMessages.OrderGet, _orderDal.Get(O => O.OrderID == Convert.ToInt32(id)));
         }
 
         public IDataResult<List<Order>> GetList()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Order>>(SuccessMessages.OrderList, _orderDal.GetAll().ToList()); 
         }
 
         public IResult Update(Order entity)
         {
-            throw new NotImplementedException();
+            _orderDal.Update(entity);
+            return new SuccessResult(SuccessMessages.OrderUpdated);
         }
     }
 }
