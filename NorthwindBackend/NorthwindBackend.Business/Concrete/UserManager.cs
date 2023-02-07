@@ -33,7 +33,7 @@ namespace NorthwindBackend.Business.Concrete
 
         public User GetByMail(string email)
         {
-            return _userDal.Get(u => u.Email == email);
+            return _userDal.Get(O=>O.Email == email);
         }
     }
 }

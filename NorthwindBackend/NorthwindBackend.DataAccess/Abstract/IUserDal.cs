@@ -12,5 +12,6 @@ namespace NorthwindBackend.DataAccess.Abstract
     public interface IUserDal : IEntityRepository<User>
     {
         List<OperationClaim> GetClaims(User user);
+        List<User> IsEmailAvailable(string email);
     }
 }

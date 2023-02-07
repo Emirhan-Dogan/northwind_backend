@@ -14,7 +14,7 @@ Technologies required for the project
 
 SQL Server database script in this directory
 <pre style="font-size: x-large;">
-SqlServer -> instnwnd.sql
+SqlServer -> NorthwindDB.sql
 </pre>
 
 Follow the given steps to run this project in your localhost
