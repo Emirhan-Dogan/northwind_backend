@@ -14,55 +14,26 @@ namespace NorthwindBackend.Business.Concrete
 {
     public class UserManager : IUserService
     {
+        IUserDal _userDal;
+
         public UserManager(IUserDal userDal)
         {
-            this._userDal = userDal;
+            _userDal = userDal;
         }
 
-        private readonly IUserDal _userDal;
-
-
-        public IResult Add(User entity)
+        public List<OperationClaim> GetClaims(User user)
         {
-            _userDal.Add(entity);
-            return new SuccessResult(SuccessMessages.UserAdded);
+            return _userDal.GetClaims(user);
         }
 
-        public IResult Delete(User entity)
+        public void Add(User user)
         {
-            _userDal.Delete(entity);
-            return new SuccessResult(SuccessMessages.UserDeleted);
+            _userDal.Add(user);
         }
 
-        public IDataResult<User> GetById(object id)
+        public User GetByMail(string email)
         {
-            return new SuccessDataResult<User>(SuccessMessages.UserGet, _userDal.Get(O => O.Id == Convert.ToInt32(id)));
-        }
-
-        public IDataResult<List<User>> GetList()
-        {
-            return new SuccessDataResult<List<User>>(SuccessMessages.UserList, _userDal.GetAll().ToList());
-        }
-
-        public IResult Update(User entity)
-        {
-            _userDal.Update(entity);
-            return new SuccessResult(SuccessMessages.UserUpdated);
-        }
-
-        public IDataResult<List<OperationClaim>> GetOperationClaims(User user)
-        {
-            return new SuccessDataResult<List<OperationClaim>>(_userDal.GetOperationClaims(user));
-        }
-
-        public IDataResult<User> GetByMail(string email)
-        {
-            if (_userDal.Get(O => O.Email == email) == null)
-            {
-                return new ErrorDataResult<User>(new User());
-            }
-
-            return new SuccessDataResult<User>(_userDal.Get(O=>O.Email == email));
+            return _userDal.Get(u => u.Email == email);
         }
     }
 }

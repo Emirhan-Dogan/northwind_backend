@@ -30,31 +30,6 @@ namespace NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer
             // Category
             services.AddSingleton<ICategoryService, CategoryManager>();
 
-            // Customer
-            services.AddSingleton<ICustomerService, CustomerManager>();
-
-            // Employee
-            services.AddSingleton<IEmployeeService, EmployeeManager>();
-
-            // OperationCalim
-            // Order
-            services.AddSingleton<IOrderService, OrderManager>();
-
-            // OrderDetail
-            services.AddSingleton<IOrderDetailService, OrderDetailManager>();
-
-            // Region
-            services.AddSingleton<IRegionService, RegionManager>();
-
-            // Shipper
-            services.AddSingleton<IShipperService, ShipperManager>();
-
-            // Supplier
-            services.AddSingleton<ISupplierService, SupplierManager>();
-
-            // Territory
-            services.AddSingleton<ITerritoryService, TerritoryManager>();
-
             // User
             services.AddSingleton<IUserService, UserManager>();
 
@@ -67,30 +42,6 @@ namespace NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer
 
             // Category
             services.AddSingleton<ICategoryDal, EfCategoryDal>();
-
-            // Customer
-            services.AddSingleton<ICustomerDal, EfCustomerDal>();
-
-            // Employee
-            services.AddSingleton<IEmployeeDal, EfEmployeeDal>();
-
-            // Order
-            services.AddSingleton<IOrderDal, EfOrderDal>();
-
-            // OrderDetail
-            services.AddSingleton<IOrderDetailDal, EfOrderDetailDal>();
-
-            // Region
-            services.AddSingleton<IRegionDal, EfRegionDal>();
-
-            // Shipper
-            services.AddSingleton<IShipperDal, EfShipperDal>();
-
-            // Supplier
-            services.AddSingleton<ISupplierDal, EfSupplierDal>();
-
-            // Territory
-            services.AddSingleton<ITerritoryDal, EfTerritoryDal>();
 
             // User
             services.AddSingleton<IUserDal, EfUserDal>();

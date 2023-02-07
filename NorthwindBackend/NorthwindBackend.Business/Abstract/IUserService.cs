@@ -10,9 +10,10 @@ using System.Threading.Tasks;
 
 namespace NorthwindBackend.Business.Abstract
 {
-    public interface IUserService : IEntityBaseService<User>
+    public interface IUserService
     {
-        IDataResult<List<OperationClaim>> GetOperationClaims(User user);
-        IDataResult<User> GetByMail(string email);
+        List<OperationClaim> GetClaims(User user);
+        void Add(User user);
+        User GetByMail(string email);
     }
 }

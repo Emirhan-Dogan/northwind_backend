@@ -11,6 +11,6 @@ namespace NorthwindBackend.DataAccess.Abstract
 {
     public interface IUserDal : IEntityRepository<User>
     {
-        List<OperationClaim> GetOperationClaims(User user);
+        List<OperationClaim> GetClaims(User user);
     }
 }

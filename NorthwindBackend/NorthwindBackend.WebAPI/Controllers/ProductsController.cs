@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NorthwindBackend.Business.Abstract;
 using NorthwindBackend.Entities.Concrete;
@@ -56,6 +57,7 @@ namespace NorthwindBackend.WebAPI.Controllers
 
 
         [HttpPost("add")]
+        [Authorize()]
         public IActionResult Add(Product product)
         {
             var result = _productService.Add(product);
