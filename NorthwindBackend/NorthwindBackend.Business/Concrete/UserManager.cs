@@ -2,6 +2,7 @@
 using NorthwindBackend.Business.Abstract;
 using NorthwindBackend.Business.Constants;
 using NorthwindBackend.DataAccess.Abstract;
+using Core.Entities.Concrete;
 using NorthwindBackend.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -47,6 +48,21 @@ namespace NorthwindBackend.Business.Concrete
         {
             _userDal.Update(entity);
             return new SuccessResult(SuccessMessages.UserUpdated);
+        }
+
+        public IDataResult<List<OperationClaim>> GetOperationClaims(User user)
+        {
+            return new SuccessDataResult<List<OperationClaim>>(_userDal.GetOperationClaims(user));
+        }
+
+        public IDataResult<User> GetByMail(string email)
+        {
+            if (_userDal.Get(O => O.Email == email) == null)
+            {
+                return new ErrorDataResult<User>(new User());
+            }
+
+            return new SuccessDataResult<User>(_userDal.Get(O=>O.Email == email));
         }
     }
 }

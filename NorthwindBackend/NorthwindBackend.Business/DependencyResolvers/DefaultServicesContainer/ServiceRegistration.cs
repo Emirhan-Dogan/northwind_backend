@@ -1,4 +1,5 @@
 ﻿
+using Core.Utilities.Security.JWT;
 using Microsoft.Extensions.DependencyInjection;
 using NorthwindBackend.Business.Abstract;
 using NorthwindBackend.Business.Concrete;
@@ -14,6 +15,12 @@ namespace NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer
 {
     public static class ServiceRegistration
     {
+        public static void addUserServices(this IServiceCollection services)
+        {
+            services.AddSingleton<IAuthService, AuthManager>();
+            services.AddSingleton<IUserService, UserManager>();
+            services.AddSingleton<ITokenHelper, JwtHelper>();
+        }
 
         public static void addBusinessServices(this IServiceCollection services)
         {
@@ -30,8 +37,6 @@ namespace NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer
             services.AddSingleton<IEmployeeService, EmployeeManager>();
 
             // OperationCalim
-            services.AddSingleton<IOperationClaimService, OperationClaimManager>();
-
             // Order
             services.AddSingleton<IOrderService, OrderManager>();
 
@@ -53,8 +58,6 @@ namespace NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer
             // User
             services.AddSingleton<IUserService, UserManager>();
 
-            // UserOperationclaim
-            services.AddSingleton<IUserOperationClaimService, UserOperationClaimManager>();
         }
 
         public static void addDataAccessServices(this IServiceCollection services)
@@ -70,9 +73,6 @@ namespace NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer
 
             // Employee
             services.AddSingleton<IEmployeeDal, EfEmployeeDal>();
-
-            // OperationCalim
-            services.AddSingleton<IOperationClaimDal, EfOperationClaimDal>();
 
             // Order
             services.AddSingleton<IOrderDal, EfOrderDal>();
@@ -94,9 +94,6 @@ namespace NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer
 
             // User
             services.AddSingleton<IUserDal, EfUserDal>();
-
-            // UserOperationclaim
-            services.AddSingleton<IUserOperationClaimDal, EfUserOperationClaimDal>();
         }
     }
 }

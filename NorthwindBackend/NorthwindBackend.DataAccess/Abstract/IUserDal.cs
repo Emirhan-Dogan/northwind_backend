@@ -1,5 +1,6 @@
 ﻿using Core.DataAccess;
 using NorthwindBackend.Entities.Concrete;
+using Core.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace NorthwindBackend.DataAccess.Abstract
 {
     public interface IUserDal : IEntityRepository<User>
     {
+        List<OperationClaim> GetOperationClaims(User user);
     }
 }

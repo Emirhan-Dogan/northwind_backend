@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NorthwindBackend.Entities.Concrete
+namespace Core.Entities.Concrete
 {
     public class User : IEntity
     {
@@ -14,7 +14,7 @@ namespace NorthwindBackend.Entities.Concrete
         public string LastName { get; set; }
         public string Email { get; set; }
         public bool Status { get; set; }
-        public bool[] PasswordSalt { get; set; }
-        public bool[] PasswordHash { get; set; }
+        public byte[] PasswordSalt { get; set; }
+        public byte[] PasswordHash { get; set; }
     }
 }

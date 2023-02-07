@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Protocols;
 using NorthwindBackend.Entities.Concrete;
+using Core.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,16 @@ namespace NorthwindBackend.DataAccess.Concrete.EntityFramework.Contexts
 {
     public class DBContext : DbContext
     {
+        //ModelBuilder modelBuilder;
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //modelBuilder.Entity<OrderDetail>(builder =>
+            //{
+            //    builder.HasNoKey();
+            //    builder.ToTable("OrderDetails");
+            //});
+
             ConfigurationManager configurationManager = new ConfigurationManager();
             configurationManager.SetBasePath(Directory.GetCurrentDirectory());
             configurationManager.AddJsonFile("appsettings.json");
@@ -25,7 +34,6 @@ namespace NorthwindBackend.DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<Category> Categories { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Region> Regions { get; set; }
@@ -33,6 +41,7 @@ namespace NorthwindBackend.DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Territory> Territories { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
     }
 }

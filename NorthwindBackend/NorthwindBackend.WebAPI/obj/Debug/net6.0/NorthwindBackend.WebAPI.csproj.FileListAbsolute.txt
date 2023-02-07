@@ -89,3 +89,4 @@ D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.WebAPI\obj\Debug\n
 D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.WebAPI\obj\Debug\net6.0\NorthwindBackend.WebAPI.pdb
 D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.WebAPI\obj\Debug\net6.0\NorthwindBackend.WebAPI.genruntimeconfig.cache
 D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.WebAPI\obj\Debug\net6.0\ref\NorthwindBackend.WebAPI.dll
+D:\Kodlar\northwind_backend\NorthwindBackend\NorthwindBackend.WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

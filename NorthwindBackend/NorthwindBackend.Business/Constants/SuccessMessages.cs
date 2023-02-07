@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+﻿using Core.Entities.Concrete;
+using Core.Utilities.Security.JWT;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NorthwindBackend.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -101,5 +103,12 @@ namespace NorthwindBackend.Business.Constants
         public static string UserOperationClaimList = "UserOperationClaim presented successfully.";
         public static string UserOperationClaimGet = "UserOperationClaim presented successfully.";
 
+        public static string SuccessfulLogin = "Successful User Login";
+
+        public static string UserIsNotAvailable = "User is not available";
+
+        public static string UserRegistered = "User Registered.";
+
+        public static string CreateAccessToken = "Creating access token successful";
     }
 }

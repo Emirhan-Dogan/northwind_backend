@@ -1,4 +1,5 @@
-﻿using System;
+﻿ using Core.Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -99,5 +100,11 @@ namespace NorthwindBackend.Business.Constants
         public static string UserOperationClaimUpdated = "The UserOperationClaim has been unsuccessfull not update.";
         public static string UserOperationClaimList = "UserOperationClaim not presented unsuccessfull.";
         public static string UserOperationClaimGet = "UserOperationClaim not presented unsuccessfull.";
+
+        public static string UserNotFound = "User Not Found.";
+
+        public static string PasswordError = "Password Error.";
+
+        public static string UserAlreadyExists = "User is available.";
     }
 }

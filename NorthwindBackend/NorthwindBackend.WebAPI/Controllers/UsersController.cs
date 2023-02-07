@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NorthwindBackend.Business.Abstract;
+using Core.Entities.Concrete;
 using NorthwindBackend.Entities.Concrete;
 
 namespace NorthwindBackend.WebAPI.Controllers

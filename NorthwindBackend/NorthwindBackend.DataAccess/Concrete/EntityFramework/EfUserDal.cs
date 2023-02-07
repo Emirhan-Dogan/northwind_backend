@@ -1,6 +1,7 @@
 ﻿using Core.DataAccess.EntityFramework;
 using NorthwindBackend.DataAccess.Abstract;
 using NorthwindBackend.DataAccess.Concrete.EntityFramework.Contexts;
+using Core.Entities.Concrete;
 using NorthwindBackend.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,17 @@ namespace NorthwindBackend.DataAccess.Concrete.EntityFramework
 {
     public class EfUserDal : EfEntityRepositoryBase<User, DBContext>, IUserDal
     {
+        public List<OperationClaim> GetOperationClaims(User user)
+        {
+            using (var context = new DBContext())
+            {
+                var result = from operationClaim in context.OperationClaims
+                             join userOperationClaim in context.UserOperationClaims
+                             on operationClaim.Id equals userOperationClaim.OperationClaimId
+                             where userOperationClaim.UserId == user.Id
+                             select new OperationClaim { Id = operationClaim.Id, Name = operationClaim.Name };
+                return result.ToList();
+            }
+        }
     }
 }
