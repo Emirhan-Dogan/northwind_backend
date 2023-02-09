@@ -40,6 +40,7 @@ namespace NorthwindBackend.DataAccess.Concrete.EntityFramework
         {
             using (var context = new DBContext())
             {
+                //var value = context.Set<User>().SingleOrDefault(filter);
                 return context.Set<User>().SingleOrDefault(filter);
             }
         }

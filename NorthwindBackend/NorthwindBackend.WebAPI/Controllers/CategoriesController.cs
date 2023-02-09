@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NorthwindBackend.Business.Abstract;
 using NorthwindBackend.Entities.Concrete;
@@ -19,6 +20,7 @@ namespace NorthwindBackend.WebAPI.Controllers
 
 
         [HttpGet("getall")]
+        [Authorize(Roles ="Category.List")]
         public IActionResult GetList()
         {
             var result = _categoryService.GetList();

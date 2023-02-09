@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection.Emit;
 
 namespace NorthwindBackend.DataAccess.Concrete.EntityFramework.Contexts
 {
@@ -28,6 +29,12 @@ namespace NorthwindBackend.DataAccess.Concrete.EntityFramework.Contexts
             configurationManager.AddJsonFile("appsettings.json");
 
             optionsBuilder.UseSqlServer(configurationManager.GetConnectionString("SQLServer"));
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<User>().ToTable("Users");
         }
 
         public DbSet<User> Users { get; set; }

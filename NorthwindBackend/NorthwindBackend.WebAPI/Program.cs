@@ -8,13 +8,16 @@ using Core.Utilities.Security.JWT;
 using Microsoft.AspNetCore.Identity;
 using TokenOptions = Core.Utilities.Security.JWT.TokenOptions;
 using Core.Utilities.Security.Encyption;
+using NorthwindBackend.DataAccess.Concrete.AdoNet;
+using Core.Entities.Concrete;
+using System.Reflection.Metadata.Ecma335;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Bizim Yazdýðýmýz Servisler.
-builder.Services.addBusinessServices();
-builder.Services.addDataAccessServices();
-builder.Services.addUserServices();
+builder.Services.AddBusinessServices();
+builder.Services.AddDataAccessEntityFrameworkCoreServicess();
+builder.Services.AddJWTServicess();
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -40,7 +43,7 @@ tokenOptions.Issuer = configurationManager.GetConnectionString("Issuer");
 tokenOptions.AccessTokenExpiration = Convert.ToInt32(configurationManager.GetConnectionString("AccessTokenExpiration"));
 tokenOptions.SecurityKey = configurationManager.GetConnectionString("SecurityKey");
 
-Console.WriteLine(configurationManager.GetConnectionString("Audience"));
+//Console.WriteLine(configurationManager.GetConnectionString("Audience"));
 
 
 builder.Services
@@ -60,6 +63,14 @@ builder.Services
     });
 
 var app = builder.Build();
+
+//AdoNetUserOperationClaimDal s = new AdoNetUserOperationClaimDal();
+//List<UserOperationClaim> operationClaims = (List<UserOperationClaim>)s.GetAll();
+//foreach (UserOperationClaim operationClaim in operationClaims)
+//{
+//    Console.WriteLine(operationClaim.Id + "Id");
+//}
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

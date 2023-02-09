@@ -19,6 +19,7 @@ namespace NorthwindBackend.WebAPI.Controllers
         }
 
         [HttpGet("getall")]
+        [Authorize()]
         public IActionResult GetList()
         {
             var result = _productService.GetList();

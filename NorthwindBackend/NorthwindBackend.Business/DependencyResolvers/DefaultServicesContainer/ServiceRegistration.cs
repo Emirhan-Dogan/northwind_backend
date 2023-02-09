@@ -15,14 +15,14 @@ namespace NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer
 {
     public static class ServiceRegistration
     {
-        public static void addUserServices(this IServiceCollection services)
+        public static void AddJWTServicess(this IServiceCollection services)
         {
             services.AddSingleton<IAuthService, AuthManager>();
-            services.AddSingleton<IUserService, UserManager>();
             services.AddSingleton<ITokenHelper, JwtHelper>();
+            services.AddSingleton<IUserService, UserManager>();
         }
 
-        public static void addBusinessServices(this IServiceCollection services)
+        public static void AddBusinessServices(this IServiceCollection services)
         {
             // Product
             services.AddSingleton<IProductService, ProductManager>();
@@ -30,12 +30,9 @@ namespace NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer
             // Category
             services.AddSingleton<ICategoryService, CategoryManager>();
 
-            // User
-            services.AddSingleton<IUserService, UserManager>();
-
         }
 
-        public static void addDataAccessServices(this IServiceCollection services)
+        public static void AddDataAccessEntityFrameworkCoreServicess(this IServiceCollection services)
         {
             // Product
             services.AddSingleton<IProductDal, EfProductDal>();
@@ -45,6 +42,11 @@ namespace NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer
 
             // User
             services.AddSingleton<IUserDal, EfUserDal>();
+        }
+
+        public static void AddDataAccessAdoNetServicess(this IServiceCollection services)
+        {
+
         }
     }
 }
