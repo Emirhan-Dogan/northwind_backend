@@ -19,7 +19,6 @@ namespace NorthwindBackend.WebAPI.Controllers
         }
 
         [HttpGet("getall")]
-        [Authorize()]
         public IActionResult GetList()
         {
             var result = _productService.GetList();
@@ -58,7 +57,7 @@ namespace NorthwindBackend.WebAPI.Controllers
 
 
         [HttpPost("add")]
-        [Authorize()]
+        [Authorize(Roles = "Product.Add")]
         public IActionResult Add(Product product)
         {
             var result = _productService.Add(product);
@@ -71,6 +70,7 @@ namespace NorthwindBackend.WebAPI.Controllers
         }
 
         [HttpPost("update")]
+        [Authorize(Roles = "Product.Update")]
         public IActionResult Update(Product product)
         {
             var result = _productService.Update(product);
@@ -83,6 +83,7 @@ namespace NorthwindBackend.WebAPI.Controllers
         }
 
         [HttpPost("delete")]
+        [Authorize(Roles = "Product.Delete")]
         public IActionResult Delete(Product product)
         {
             var result = _productService.Delete(product);

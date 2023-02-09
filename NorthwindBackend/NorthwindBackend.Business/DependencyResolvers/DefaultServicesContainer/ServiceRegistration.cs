@@ -44,9 +44,5 @@ namespace NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer
             services.AddSingleton<IUserDal, EfUserDal>();
         }
 
-        public static void AddDataAccessAdoNetServicess(this IServiceCollection services)
-        {
-
-        }
     }
 }

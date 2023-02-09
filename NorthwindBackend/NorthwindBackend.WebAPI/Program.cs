@@ -1,16 +1,9 @@
-using Microsoft.IdentityModel.JsonWebTokens;
-using Microsoft.AspNetCore.Authentication;
 using NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Core.Utilities.Security.JWT;
-using Microsoft.AspNetCore.Identity;
 using TokenOptions = Core.Utilities.Security.JWT.TokenOptions;
 using Core.Utilities.Security.Encyption;
-using NorthwindBackend.DataAccess.Concrete.AdoNet;
-using Core.Entities.Concrete;
-using System.Reflection.Metadata.Ecma335;
 
 var builder = WebApplication.CreateBuilder(args);
 

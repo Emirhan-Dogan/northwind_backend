@@ -10,6 +10,5 @@ namespace Core.Utilities.Result
     {
         bool Success { get; }
         string Message { get; }
-
     }
 }

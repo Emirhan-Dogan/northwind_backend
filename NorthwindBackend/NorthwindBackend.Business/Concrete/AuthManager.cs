@@ -39,7 +39,7 @@ namespace NorthwindBackend.Business.Concrete
             };
             _userService.Add(user);
 
-            return new SuccessDataResult<User>(SuccessMessages.UserRegistered, user);
+            return new SuccessDataResult<User>(user, SuccessMessages.UserRegistered);
         }
 
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)
@@ -47,15 +47,15 @@ namespace NorthwindBackend.Business.Concrete
             var userToCheck = _userService.GetByMail(userForLoginDto.Email);
             if (userToCheck == null)
             {
-                return new ErrorDataResult<User>(ErrorMesages.UserNotFound, new User());
+                return new ErrorDataResult<User>(ErrorMesages.UserNotFound);
             }
 
             if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
             {
-                return new ErrorDataResult<User>(ErrorMesages.PasswordError, new User());
+                return new ErrorDataResult<User>(ErrorMesages.PasswordError);
             }
 
-            return new SuccessDataResult<User>(SuccessMessages.SuccessfulLogin, userToCheck);
+            return new SuccessDataResult<User>(userToCheck, SuccessMessages.SuccessfulLogin);
         }
 
         public IResult UserExists(string email)
@@ -71,7 +71,7 @@ namespace NorthwindBackend.Business.Concrete
         {
             var claims = _userService.GetClaims(user);
             var accessToken = _tokenHelper.CreateToken(user, claims);
-            return new SuccessDataResult<AccessToken>(SuccessMessages.CreateAccessToken, accessToken);
+            return new SuccessDataResult<AccessToken>(accessToken, SuccessMessages.CreateAccessToken);
         }
     }
 }

@@ -35,17 +35,17 @@ namespace NorthwindBackend.Business.Concrete
 
         public IDataResult<Product> GetById(object id)
         {
-            return new SuccessDataResult<Product>(SuccessMessages.ProductGet, _productDal.Get(O => O.ProductID == Convert.ToInt32(id)));
+            return new SuccessDataResult<Product>(_productDal.Get(O => O.ProductID == Convert.ToInt32(id)), SuccessMessages.ProductGet);
         }
 
         public IDataResult<List<Product>> GetList()
         {
-            return new SuccessDataResult<List<Product>>(SuccessMessages.ProductList, _productDal.GetAll().ToList());
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll().ToList(), SuccessMessages.ProductList);
         }
 
         public IDataResult<List<Product>> GetListByCategory(int categoryId)
         {
-            return new SuccessDataResult<List<Product>>(SuccessMessages.ProductList, _productDal.GetAll(O => O.CategoryID == categoryId).ToList());
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(O => O.CategoryID == categoryId).ToList(), SuccessMessages.ProductList);
         }
 
         public IResult Update(Product entity)

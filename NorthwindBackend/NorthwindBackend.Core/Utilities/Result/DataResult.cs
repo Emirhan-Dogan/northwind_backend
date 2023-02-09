@@ -8,17 +8,25 @@ namespace Core.Utilities.Result
 {
     public class DataResult<T> : Result, IDataResult<T>
     {
-        public DataResult(bool success, string message, T data) : base(success, message)
+        public DataResult(T data, string message, bool success) : base(message, success)
         {
             this.Data = data;
         }
 
-        public DataResult(bool success, T data) : base(success)
+        public DataResult(T data, bool success) : base(success)
         {
             this.Data = data;
         }
 
+        public DataResult(string message, bool success) : base(message, success)
+        {
 
+        }
+
+        public DataResult(bool success) : base(success)
+        {
+
+        }
 
         public T Data { get; }
     }

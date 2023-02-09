@@ -35,12 +35,12 @@ namespace NorthwindBackend.Business.Concrete
 
         public IDataResult<Category> GetById(object id)
         {
-            return new SuccessDataResult<Category>(SuccessMessages.CategoryGet, _categoryDal.Get(O => O.CategoryID == Convert.ToInt32(id)));
+            return new SuccessDataResult<Category>(_categoryDal.Get(O => O.CategoryID == Convert.ToInt32(id)), SuccessMessages.CategoryGet);
         }
 
         public IDataResult<List<Category>> GetList()
         {
-            return new SuccessDataResult<List<Category>>(SuccessMessages.CategoryList, _categoryDal.GetAll().ToList());
+            return new SuccessDataResult<List<Category>>(_categoryDal.GetAll().ToList(), SuccessMessages.CategoryList);
         }
 
         public IResult Update(Category entity)

@@ -6,14 +6,26 @@ using System.Threading.Tasks;
 
 namespace Core.Utilities.Result
 {
-    public class SuccessDataResult<T> : DataResult<T>
+    public class SuccessDataResult<T> : DataResult<T>, ISuccess
     {
-        public SuccessDataResult(T data) : base(true, data)
+        public SuccessDataResult(T data,string message) : base(data, message, true)
         {
+
         }
 
-        public SuccessDataResult(string message, T data) : base(true, message, data)
+        public SuccessDataResult(T data) : base(data, true)
         {
+
+        }
+
+        public SuccessDataResult(string message) : base(message, true)
+        {
+
+        }
+
+        public SuccessDataResult() : base(true)
+        {
+
         }
     }
 }

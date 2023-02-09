@@ -20,7 +20,6 @@ namespace NorthwindBackend.WebAPI.Controllers
 
 
         [HttpGet("getall")]
-        [Authorize(Roles ="Category.List")]
         public IActionResult GetList()
         {
             var result = _categoryService.GetList();
@@ -47,6 +46,7 @@ namespace NorthwindBackend.WebAPI.Controllers
 
 
         [HttpPost("add")]
+        [Authorize(Roles = "Category.Add")]
         public IActionResult Add(Category category)
         {
             var result = _categoryService.Add(category);
@@ -59,6 +59,7 @@ namespace NorthwindBackend.WebAPI.Controllers
         }
 
         [HttpPost("update")]
+        [Authorize(Roles = "Category.Update")]
         public IActionResult Update(Category category)
         {
             var result = _categoryService.Update(category);
@@ -71,6 +72,7 @@ namespace NorthwindBackend.WebAPI.Controllers
         }
 
         [HttpPost("delete")]
+        [Authorize(Roles = "Category.Delete")]
         public IActionResult Delete(Category category)
         {
             var result = _categoryService.Delete(category);
