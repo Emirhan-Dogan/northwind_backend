@@ -13,7 +13,11 @@
 
   <ItemGroup>
     <Folder Include="DependencyResolvers\Autofac\" />
-    <Folder Include="ValidationRules\FluentValidation\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.5.0" />
+    <PackageReference Include="FluentValidation" Version="11.4.0" />
   </ItemGroup>
 
 </Project>

@@ -24,29 +24,29 @@ namespace NorthwindBackend.Business.Concrete
         public IResult Add(Category entity)
         {
             _categoryDal.Add(entity);
-            return new SuccessResult(SuccessMessages.CategoryAdded);
+            return new SuccessResult(SuccessMessages.AddedEntities("Category"));
         }
 
         public IResult Delete(Category entity)
         {
             _categoryDal.Delete(entity);
-            return new SuccessResult(SuccessMessages.CategoryDeleted);
+            return new SuccessResult(SuccessMessages.DeletedEntities("Category"));
         }
 
         public IDataResult<Category> GetById(object id)
         {
-            return new SuccessDataResult<Category>(_categoryDal.Get(O => O.CategoryID == Convert.ToInt32(id)), SuccessMessages.CategoryGet);
+            return new SuccessDataResult<Category>(_categoryDal.Get(O => O.CategoryID == Convert.ToInt32(id)), SuccessMessages.GetEntities("Category"));
         }
 
         public IDataResult<List<Category>> GetList()
         {
-            return new SuccessDataResult<List<Category>>(_categoryDal.GetAll().ToList(), SuccessMessages.CategoryList);
+            return new SuccessDataResult<List<Category>>(_categoryDal.GetAll().ToList(), SuccessMessages.ListEntities("Category"));
         }
 
         public IResult Update(Category entity)
         {
             _categoryDal.Update(entity);
-            return new SuccessResult(SuccessMessages.CategoryUpdated);
+            return new SuccessResult(SuccessMessages.UpdatedEntities("Category"));
         }
     }
 }

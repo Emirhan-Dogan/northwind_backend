@@ -15,6 +15,17 @@
           "NorthwindBackend.WebAPI.dll": {}
         }
       },
+      "Autofac/6.5.0": {
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "5.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Autofac.dll": {
+            "assemblyVersion": "6.5.0.0",
+            "fileVersion": "6.5.0.0"
+          }
+        }
+      },
       "Azure.Core/1.24.0": {
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
@@ -46,6 +57,53 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.6.0.0",
             "fileVersion": "1.600.22.20503"
+          }
+        }
+      },
+      "Castle.Core/1.2.0": {
+        "dependencies": {
+          "NLog": "1.0.0.505",
+          "log4net": "1.2.10"
+        },
+        "runtime": {
+          "lib/Castle.Core.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.6623"
+          },
+          "lib/Castle.Services.Logging.NLogIntegration.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.6627"
+          },
+          "lib/Castle.Services.Logging.log4netIntegration.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.6627"
+          }
+        }
+      },
+      "Castle.DynamicProxy/2.2.0": {
+        "dependencies": {
+          "Castle.Core": "1.2.0"
+        },
+        "runtime": {
+          "lib/Castle.DynamicProxy2.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.6628"
+          }
+        }
+      },
+      "FluentValidation/11.4.0": {
+        "runtime": {
+          "lib/net6.0/FluentValidation.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.4.0.0"
+          }
+        }
+      },
+      "log4net/1.2.10": {
+        "runtime": {
+          "lib/2.0/log4net.dll": {
+            "assemblyVersion": "1.2.10.0",
+            "fileVersion": "1.2.10.0"
           }
         }
       },
@@ -491,6 +549,14 @@
           }
         }
       },
+      "NLog/1.0.0.505": {
+        "runtime": {
+          "lib/NLog.dll": {
+            "assemblyVersion": "1.0.0.505",
+            "fileVersion": "1.0.0.505"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/6.2.3": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "3.0.0",
@@ -774,6 +840,9 @@
       },
       "Core/1.0.0": {
         "dependencies": {
+          "Autofac": "6.5.0",
+          "Castle.DynamicProxy": "2.2.0",
+          "FluentValidation": "11.4.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.13",
           "Microsoft.EntityFrameworkCore": "7.0.2",
           "Microsoft.Extensions.Configuration": "7.0.0",
@@ -786,6 +855,8 @@
       },
       "NorthwindBackend.Business/1.0.0": {
         "dependencies": {
+          "Autofac": "6.5.0",
+          "FluentValidation": "11.4.0",
           "NorthwindBackend.DataAccess": "1.0.0",
           "NorthwindBackend.Entities": "1.0.0"
         },
@@ -821,6 +892,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Autofac/6.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sm6HWWBDEoTPGXeyOchMygJ/7L89VxmVH72BFxakG88J34AVjA8RMi5jbv3PdpUtXI/d9ZLKOaxCmOSIo2K4aA==",
+      "path": "autofac/6.5.0",
+      "hashPath": "autofac.6.5.0.nupkg.sha512"
+    },
     "Azure.Core/1.24.0": {
       "type": "package",
       "serviceable": true,
@@ -834,6 +912,34 @@
       "sha512": "sha512-EycyMsb6rD2PK9P0SyibFfEhvWWttdrYhyPF4f41uzdB/44yQlV+2Wehxyg489Rj6gbPvSPgbKq0xsHJBhipZA==",
       "path": "azure.identity/1.6.0",
       "hashPath": "azure.identity.1.6.0.nupkg.sha512"
+    },
+    "Castle.Core/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Nzf3go+P9ZReJOWX1FVAnd2eBcF7u1sjIll2KC80B2kTmJTJY/cqvJG6kK/x/dXrPh4zmdPatnnVWZ/nrKzEaw==",
+      "path": "castle.core/1.2.0",
+      "hashPath": "castle.core.1.2.0.nupkg.sha512"
+    },
+    "Castle.DynamicProxy/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3eiJiPYF7wK0CmHn47d56kbJLfvTGfLZ8D5G1dLLRbCo8h28gn6qkKTxFk/65FDz9zeUqWWmpZ3SAwhbpOr1sw==",
+      "path": "castle.dynamicproxy/2.2.0",
+      "hashPath": "castle.dynamicproxy.2.2.0.nupkg.sha512"
+    },
+    "FluentValidation/11.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WZJyrNf4suiaI6avVG32W9kmBLC3+V5rDTcLeRJjeU4tDmTyDIOz1459DzCKppXs34YpZg9rCUzDY3M4XxG7Ug==",
+      "path": "fluentvalidation/11.4.0",
+      "hashPath": "fluentvalidation.11.4.0.nupkg.sha512"
+    },
+    "log4net/1.2.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yP7PCpxPt5cB9yiRAvCwyW5YRqXV4jM4tpVLnm/ls2nJt786l5srbSdm5xIEVMXz/kOYqLKP177Gyqey1wdP/A==",
+      "path": "log4net/1.2.10",
+      "hashPath": "log4net.1.2.10.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.13": {
       "type": "package",
@@ -1114,6 +1220,13 @@
       "sha512": "sha512-Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
       "path": "microsoft.win32.systemevents/5.0.0",
       "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
+    },
+    "NLog/1.0.0.505": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7dnEHYmlfAho9gbM0KvjcfSej419aevcYyDNFcQf6ALcj+ZEkns64ZAN1KOOQK0lL20WHWXbKML4aA088BENTg==",
+      "path": "nlog/1.0.0.505",
+      "hashPath": "nlog.1.0.0.505.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.2.3": {
       "type": "package",

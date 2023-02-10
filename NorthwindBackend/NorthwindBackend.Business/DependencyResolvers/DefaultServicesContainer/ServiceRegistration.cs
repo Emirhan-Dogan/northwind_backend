@@ -44,5 +44,9 @@ namespace NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer
             services.AddSingleton<IUserDal, EfUserDal>();
         }
 
+        public static void AddValidationAspectServices(this IServiceCollection services)
+        {
+        }
+
     }
 }

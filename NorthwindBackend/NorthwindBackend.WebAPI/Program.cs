@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddBusinessServices();
 builder.Services.AddDataAccessEntityFrameworkCoreServicess();
 builder.Services.AddJWTServicess();
+builder.Services.AddValidationAspectServices();
 
 // Add services to the container.
 builder.Services.AddControllers();

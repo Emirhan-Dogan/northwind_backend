@@ -55,9 +55,7 @@ namespace NorthwindBackend.WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
-
         [HttpPost("add")]
-        [Authorize(Roles = "Product.Add")]
         public IActionResult Add(Product product)
         {
             var result = _productService.Add(product);
