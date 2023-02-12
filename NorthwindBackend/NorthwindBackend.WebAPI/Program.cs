@@ -1,17 +1,26 @@
-using NorthwindBackend.Business.DependencyResolvers.DefaultServicesContainer;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using TokenOptions = Core.Utilities.Security.JWT.TokenOptions;
 using Core.Utilities.Security.Encyption;
+using Autofac;
+using NorthwindBackend.Business.DependencyResolvers.Autofac;
+using Autofac.Extensions.DependencyInjection;
+using Core.Utilities.IoC;
+using Core.Extensions;
+using Core.DependencyResolvers;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Bizim Yazdýðýmýz Servisler.
-builder.Services.AddBusinessServices();
-builder.Services.AddDataAccessEntityFrameworkCoreServicess();
-builder.Services.AddJWTServicess();
-builder.Services.AddValidationAspectServices();
+var containerBuilder = new ContainerBuilder();
+var provider = builder.Services.BuildServiceProvider();
+var factory = provider.GetService<IServiceProviderFactory<ContainerBuilder>>();
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
+    .ConfigureContainer<ContainerBuilder>(builder =>
+    {
+        builder.RegisterModule(new AutofacBusinessModule());
+    });
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -26,6 +35,7 @@ builder.Services.AddCors(
             builder.WithOrigins("https://localhost:7061");
         });
     });
+
 
 // builder.Services.AddAuthentication();//jwtBearerDefaults
 TokenOptions tokenOptions = new TokenOptions();
@@ -55,6 +65,11 @@ builder.Services
         IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
         };
     });
+
+builder.Services.AddDependencyResolvers(new ICoreModule[]
+{
+    new CoreModule()
+});
 
 var app = builder.Build();
 

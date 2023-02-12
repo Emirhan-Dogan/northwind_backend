@@ -27,15 +27,13 @@ namespace Core.Utilities.Security.JWT
             _tokenOptions.SecurityKey = configurationManager.GetConnectionString("SecurityKey");
 
             //_tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
-
-
-            this._accessTokenExpirations = DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);
         }
         private TokenOptions _tokenOptions;
         DateTime _accessTokenExpirations;
 
         public AccessToken CreateToken(User user, List<OperationClaim> operationClaims)
         {
+            this._accessTokenExpirations = DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);
             var securityKey = SecurityKeyHelper.CreateSecurityKey(_tokenOptions.SecurityKey);
             var signingCredentials = SigningCredentialsHelper.CreateSigningCredentials(securityKey);
             var jwt = CreateJwtSecurityToken(_tokenOptions, user, signingCredentials, operationClaims);

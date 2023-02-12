@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Core.Entities.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NorthwindBackend.Business.Abstract;
@@ -68,7 +69,7 @@ namespace NorthwindBackend.WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        [Authorize(Roles = "Product.Update")]
+        //[Authorize(Roles = "Product.Update")]
         public IActionResult Update(Product product)
         {
             var result = _productService.Update(product);
@@ -81,7 +82,6 @@ namespace NorthwindBackend.WebAPI.Controllers
         }
 
         [HttpPost("delete")]
-        [Authorize(Roles = "Product.Delete")]
         public IActionResult Delete(Product product)
         {
             var result = _productService.Delete(product);

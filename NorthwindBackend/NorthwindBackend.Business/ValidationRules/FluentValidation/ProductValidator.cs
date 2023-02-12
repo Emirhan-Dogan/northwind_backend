@@ -13,7 +13,6 @@ namespace NorthwindBackend.Business.ValidationRules.FluentValidation
         public ProductValidator()
         {
             RuleFor(p => p.ProductName).NotEmpty().WithMessage("Product Name is empty."); // magic stringden kurtulma. formatlı stringler... 
-            RuleFor(p => p.ProductName).Length(2);
             RuleFor(p => p.UnitPrice).NotEmpty().GreaterThanOrEqualTo(20);
             RuleFor(p => p.UnitPrice).NotEmpty().GreaterThanOrEqualTo(0).When(p => p.CategoryID == 2);
             RuleFor(p => p.UnitsInStock).Must(CheckStock).WithMessage("Stoklar tükendi");
