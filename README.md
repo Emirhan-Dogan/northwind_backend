@@ -19,7 +19,18 @@ SqlServer -> NorthwindDB.sql
 
 Follow the given steps to run this project in your localhost
 <pre style="font-size: x-large;">
-
+Step 1 : Download the project
+Step 2 : Open the MSSQLServer
 </pre>
 
+<pre>
+Step 3 : Open NorthwindDB.sql
+</pre>
+<img src="readme-assets/images/open.jpg">
+<img src="readme-assets/images/script-open.jpg">
+<pre>
+Step 4 : Running the script.
+If you have a database named NorthwindDB, it will be deleted.
+</pre>
+<img src="readme-assets/images/execute.jpg">
 
